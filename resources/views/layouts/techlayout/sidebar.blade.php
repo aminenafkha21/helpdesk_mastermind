@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="user-profile">
           <div class="user-image">
-            <img src="{{URL::asset('assets/images/faces/face28.png')}}">
+            <img src="{{URL::asset('assets/images/technicien.jpg')}}">
           </div>
           <div class="user-name">
               {{Auth::user()->name}}

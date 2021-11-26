@@ -64,18 +64,19 @@
                   {{$not->message}} {{Auth::user()->name}} !
                   </p>
                   
+                  
                   @if ( now()->diffInSeconds($not->created_at) < 61 )
                            {{ now()->diffInSeconds($not->created_at) }}  Seconds ago
                   @elseif ( now()->diffInMinutes($not->created_at) < 61 )
                            {{ now()->diffInMinutes($not->created_at) }}  Minutes ago
-                  @elseif ( now()->diffInMinutes($not->created_at) > 61 )
+                  @elseif ( now()->diffInHours($not->created_at) <= 24 )
                           {{ now()->diffInHours($not->created_at) }}  hours ago
-                  @elseif ( now()->diffInHours($not->created_at) > 24 )
-                          {{ now()->diffInHours($not->created_at) }}  days ago
+                  @elseif ( now()->diffInDays($not->created_at) < 30 )
+                          {{ now()->diffInDays($not->created_at) }}  Days ago
                   @elseif ( now()->diffInMonths($not->created_at) > 0 )
-                    {{ now()->diffInHours($not->created_at) }}  Months ago
+                    {{ now()->diffInMonths($not->created_at) }}  Months ago
                   @elseif ( now()->diffInYears($not->created_at) > 0 )
-                    {{ now()->diffInHours($not->created_at) }}  Years ago
+                    {{ now()->diffInYears($not->created_at) }}  Years ago
 
 
                   @endif

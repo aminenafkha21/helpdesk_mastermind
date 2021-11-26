@@ -69,6 +69,19 @@ class HomeController extends Controller
 
     }
 
+
+    public function users()
+    {
+        
+        $usertype=Auth::user()->user_type;
+
+        if($usertype =="0") {
+            return view('admin.users');
+
+
+        }
+
+    }
     
     
    

@@ -222,7 +222,7 @@ class TicketController extends Controller
 
     function removeTicket($id){
         ticket::destroy($id);
-        return redirect()->route('tickets.index');
+        return redirect()->route('tickets.index')->with('success','Ticket deleted successfully.');
     
     }    /**
      * Display the specified resource.
